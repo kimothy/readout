@@ -10,7 +10,7 @@ rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
 rc('text', usetex=True)
 
 # Main parameters
-mesurements = 50
+mesurements = 1000000
 dataArray = []
 timeArray = []
 space = "	"
@@ -28,6 +28,9 @@ def plotsettings():
 	xlabel(r'$\Delta T$, $[S]$')
 	ylabel(r'$Value$')
 
+
+
+
 for device in locations:
 	try:
 		arduino = serial.Serial(device,9600)
@@ -35,7 +38,6 @@ for device in locations:
 		time.sleep(0.001)
 	except:
 		print "No device at",device
-
 	
 text_file = open("Output.txt","w")
 
